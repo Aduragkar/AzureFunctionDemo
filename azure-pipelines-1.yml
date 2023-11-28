@@ -7,11 +7,12 @@ trigger:
 - main
 
 resources:
- repositories:
-   - repository: AzureFunctionDemo 
-     endpoint: Aduragkar
-     ref: main
-
+  repositories:
+  - repository: common
+    type: github
+    name: Aduragkar/AzureFunctionDemo
+    endpoint: Aduragkar
+     
 variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '66c5143a-43f4-402a-b5fd-a224f94f8f29'
