@@ -80,7 +80,9 @@ stages:
           - task: AzureFunctionApp@2
             displayName: 'Azure functions app deploy'
             inputs:
-              azureSubscription: '$(azureSubscription)'
-              appType: functionAppLinux
-              appName: $(functionAppName)
+              connectedServiceNameARM: 'Azure_Subscription_Test (854b0dbf-06ca-4bc7-8423-0e5da3935a2a)-1886'
+              appType: 'functionAppLinux'
+              appName: '$(functionAppName)'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              runtimeStack: 'PYTHON|3.10'
+              deploymentMethod: 'auto'
